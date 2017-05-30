@@ -1,0 +1,17 @@
+Improve user control over bounces
+If the ball is coming down toward the right (or left) and
+ hits the left (or right)
+ 1/2 of the paddle, the ball goes back the way it came.
+I did this by detecting where the ball collides with the paddle and then return differnt string values in the collision method in paddle class. 
+Then in the play class's collision method, I modify the motion of the ball differntly based on the returned value. 
+
+Implement sound effects
+If the ball collide with the bricks, a sound
+ is played when brick is removed.
+I did this by creating a sound object and play it every time the ball hits a brick. 
+(The game may take a little time to load the sound when the ball collides with the first brick)
+
+Keep score
+A score is at the right corner at the top of the screen. It increases every time the ball collides with a brick. The higher the brick is, the more the score increases. 
+I did this by adding a _score attribute to the Play class. Every time the ball hits a brick, the score increases by a certain amount based on what the y attibute of the brick is. (a= i.y-(GAME_HEIGHT -BRICK_Y_OFFSET-BRICK_ROWS*(BRICK_HEIGHT
++BRICK_SEP_V))) I made the amount a this way because I don't want the score to be negative and I don't want it to be a huge number. 
